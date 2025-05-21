@@ -1,20 +1,22 @@
+'use client';
+
 import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
 import Hero from '../components/sections/Hero';
-import About from '../components/sections/About';
 import Menu from '../components/sections/Menu';
-import FeaturedFlavors from '../components/sections/FeaturedFlavors';
+import Gallery from '../components/sections/Gallery';
+import About from '../components/sections/About';
 import Contact from '../components/sections/Contact';
+import Footer from '../components/layout/Footer';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main>
+      <main className="flex-grow">
         <Hero />
-        <About />
-        <FeaturedFlavors />
         <Menu />
+        <Gallery />
+        <About />
         <Contact />
       </main>
       <Footer />
