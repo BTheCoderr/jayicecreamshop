@@ -12,6 +12,10 @@ module.exports = {
         secondary: "#00acc1",
         accent: "#ffde59",
       },
+      fontFamily: {
+        fredoka: ["var(--font-fredoka)", "sans-serif"],
+        poppins: ["var(--font-poppins)", "sans-serif"],
+      },
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'bounce-slow': 'bounce 6s ease-in-out infinite',
@@ -19,6 +23,9 @@ module.exports = {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'fade-in-up': 'fadeInUp 0.7s ease-in-out',
         'wiggle': 'wiggle 1s ease-in-out infinite',
+        'scale-up': 'scaleUp 0.5s ease-in-out',
+        'slide-in-right': 'slideInRight 0.5s ease-in-out',
+        'slide-in-left': 'slideInLeft 0.5s ease-in-out',
       },
       keyframes: {
         float: {
@@ -36,6 +43,18 @@ module.exports = {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
+        },
+        scaleUp: {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        slideInRight: {
+          '0%': { transform: 'translateX(-20px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideInLeft: {
+          '0%': { transform: 'translateX(20px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
         },
       }
     },

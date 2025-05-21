@@ -6,6 +6,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Font customization */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-fredoka);
+  }
+  
+  body {
+    font-family: var(--font-poppins);
+  }
+}
+
 /* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -25,6 +36,21 @@ html {
 @keyframes wiggle {
   0%, 100% { transform: rotate(-3deg); }
   50% { transform: rotate(3deg); }
+}
+
+@keyframes scaleUp {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  0% { transform: translateX(-20px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  0% { transform: translateX(20px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 
 /* Animation delays */
@@ -75,4 +101,50 @@ html {
 
 .glass {
   @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
+}
+
+/* Custom hover effects */
+.hover-lift {
+  @apply transition-all duration-300;
+}
+
+.hover-lift:hover {
+  @apply -translate-y-1 shadow-lg;
+}
+
+/* Section headers */
+.section-title {
+  @apply text-4xl md:text-5xl font-bold text-center mb-12 font-fredoka;
+}
+
+.section-title span {
+  @apply heading-gradient;
+}
+
+/* Card styles */
+.card {
+  @apply rounded-2xl overflow-hidden shadow-lg bg-white transition-all duration-300 hover:shadow-xl;
+}
+
+/* Utility classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .section-title {
+    @apply text-3xl;
+  }
+  
+  .btn {
+    @apply px-4 py-2 text-sm;
+  }
 }

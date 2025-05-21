@@ -1,10 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans } from "next/font/google";
+import { Fredoka, Poppins } from "next/font/google";
 import "./globals.css";
 
-const dmSans = DM_Sans({
+const fredoka = Fredoka({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  variable: "--font-fredoka",
+  display: "swap",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -39,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${dmSans.variable} font-sans antialiased`} suppressHydrationWarning>
+      <body className={`${fredoka.variable} ${poppins.variable} font-poppins antialiased`} suppressHydrationWarning>
         {children}
       </body>
     </html>
